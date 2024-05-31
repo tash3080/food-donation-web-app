@@ -1,0 +1,53 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+}
+
+/* Page Header Styling with gradient background */
+.page-header {
+    background: linear-gradient(135deg, #1082d8, #0518ac);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Donation Card Styling */
+.donation-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.donation-card span {
+    font-weight: bold;
+}
+
+.donation-card .donation-status {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.donation-card .btn {
+    background-color: #1082d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}

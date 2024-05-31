@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Share Plate</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/assets/images/blog-bg.jpg');
+            z-index: -200;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            border-radius: 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .blog-header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 75px;
+        }
+
+        .blog-title {
+            color: #1082d8;
+        }
+
+        .blog-subtitle {
+            color: purple;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .menu ul li a {
+            font-size: 17px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nevbar" id="nevbar">
+        <div class="logo">
+            <a href="http://localhost:3000" id="logo">
+                <h1><span>SHARE</span> PLATE</h1>
+            </a>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a id="home" href="http://localhost:3000">Home</a></li>
+                <li><a id="about" href="/home/about-us" target="_blank">About</a></li>
+                <li><a href="http://localhost:3000/#service">Service</a></li>
+                <li><a href="http://localhost:3000/#contact">Contact</a></li>
+                <li><a id="blog" href="/home/blog" target="_blank">Blog</a></li>
+                <li><a id="donate" href="/auth/signup" target="_blank">Donate</a></li>
+                <li><a id="donate" href="/orderForm" target="_blank">Order Free Food</a></li>
+                <li><a id="user" href="/auth/login" class="usericon" target="_blank"><i class="fas fa-user-circle">Login</i></a></li>
+            </ul>
+        </div>
+        <div class="menuicon">
+            <i id="menuicon" onclick="togglemenu()" class="fas fa-chevron-circle-down"> <span>MENU</span></i>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="blog-header text-center">
+            <h1 class="blog-title">SHARE <span class="blog-subtitle">PLATE</span> Blog</h1>
+            <p>Inspiring stories and tips on food donation</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="mb-4 text-white">Featured Articles</h2>
+                <div class="card">
+                    <img src="/assets/images/blog-waste.jpg" class="card-img-top"
+                        alt="Featured Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Top 10 Ways to Reduce Food Waste</h5>
+                        <p class="card-text">Food waste is a significant issue that impacts our environment, economy,
+                            and communities. By making conscious choices and small changes in our daily habits, we
+                            can significantly reduce the amount of food we waste.</p>
+                        <a href="https://www.nestleprofessional.com.au/sustainability/10-ways-reduce-food-waste"
+                            class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/assets/images/blog-donation.jpg" class="card-img-top"
+                        alt="Featured Image">
+                    <div class="card-body">
+                        <h5 class="card-title">How Food Donations Change Lives</h5>
+                        <p class="card-text">Discover how your food donations make a significant impact on communities
+                            in need. Read inspiring stories from our donors and recipients.</p>
+                        <a href="https://news.harvard.edu/gazette/story/2021/08/how-food-donations-can-help-fight-hunger-and-climate-change/"
+                            class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+                <% posts.forEach(post=> { %>
+                    <div class="card">
+                        <img src="<%= post.imageUrl %>" class="card-img-top" alt="Featured Image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= post.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= post.text %>
+                            </p>
+                            <a href="<%= post.link %>" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="mb-4 text-white">Recent Posts</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Top 10 Ways to Reduce Food Waste</h5>
+                        <p class="card-text">Practical tips and strategies to minimize food waste in your daily life.
+                        </p>
+                        <a href="https://www.nestleprofessional.com.au/sustainability/10-ways-reduce-food-waste"
+                            class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">How Food Donations Change Lives</h5>
+                        <p class="card-text">Discover how your food donations make a significant impact on communities
+                            in need. Read inspiring stories from our donors and recipients.</p>
+                        <a href="https://news.harvard.edu/gazette/story/2021/08/how-food-donations-can-help-fight-hunger-and-climate-change/"
+                            class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+                <% posts.forEach(post=> { %>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= post.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= post.text %>
+                            </p>
+                            <a href="<%= post.link %>" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var menu = document.getElementById("menu");
+        menu.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menu.style.maxHeight == "0px") {
+                menu.style.maxHeight = "390px";
+            }
+            else {
+                menu.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+/* Add a stylish font and background settings */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Header Styling with gradient background */
+.page-header {
+    background: linear-gradient(135deg, #007BFF, #142ce1);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Assign Agent Form Styling */
+.assign-agent-form {
+    border: 1px solid #ccc;
+    margin: 3% auto;
+    padding: 4%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    min-width: 400px;
+    background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+}
+
+.assign-agent-form .row {
+    margin-bottom: 20px;
+}
+
+.assign-agent-form label {
+    font-weight: bold;
+}
+
+.assign-agent-form input[type="text"],
+.assign-agent-form select,
+.assign-agent-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.assign-agent-form .btn {
+    width: 75%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .page-header h5 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .assign-agent-form {
+        width: 90%;
+        margin: 5% auto;
+    }
+}

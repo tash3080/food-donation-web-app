@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/assets/css/admin/previousDonations.css">
+</head>
+<body>
+    <main>
+        <%- include('../partials/adminSidebar') %>
+        <div id="main-wrapper">
+            <div class="page-header">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+                <h5 class="m-0">Donations - Previous</h5>
+            </div>
+
+            <div class="table-container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Donor name</th>
+                            <th scope="col">Food type</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i<previousDonations.length; i++) { %>
+                            <tr>
+                                <th scope="row" class="text-white"> <%= i+1 %> </th>
+                                <td class="text-white"> <%= previousDonations[i].donor.firstName + " " + previousDonations[i].donor.lastName %> </td>
+                                <td class="text-white"> <%= previousDonations[i].foodType %> </td>
+                                <td class="text-white"> <%= previousDonations[i].quantity %> </td>
+                                <td class="text-white 
+                                    <% if(previousDonations[i].status === 'Pending') { %>
+                                        status-pending
+                                    <% } else if(previousDonations[i].status === 'Accepted') { %>
+                                        status-accepted
+                                    <% } else if(previousDonations[i].status === 'Rejected') { %>
+                                        status-rejected
+                                    <% } %>
+                                "> <%= previousDonations[i].status %> </td>
+                                <td><a href="/admin/donation/view/<%= previousDonations[i]._id %>" class="btn">View</a></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

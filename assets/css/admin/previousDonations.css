@@ -1,0 +1,119 @@
+/* Add a stylish font */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Header Styling with gradient background */
+.page-header {
+    background: linear-gradient(135deg, #4169E1, #4169E1);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Table Styling */
+.table-container {
+    margin: 20px auto;
+    max-height: 75vh;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+th {
+    background-color: #0b2c4f;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #4169E1;
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-buttons a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Status Styles */
+.status-pending {
+    color: #FFA500;
+}
+
+.status-accepted {
+    color: #008000;
+}
+
+.status-rejected {
+    color: #FF0000;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .page-header h5 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .table-container {
+        margin: 10px auto;
+        max-height: none;
+    }
+
+    table {
+        box-shadow: none;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: #fff;
+    }
+
+    .action-buttons a {
+        padding: 8px 16px;
+    }
+}

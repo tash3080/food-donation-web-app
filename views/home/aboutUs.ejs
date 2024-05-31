@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Share Plate</title>
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+                url('/assets/images/about-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .header {
+			background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            /* padding: 50px 20px; */
+			padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 75px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #1082d8;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: purple;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .content h2 {
+            color: #1082d8;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            color: black;
+            line-height: 1.6;
+        }
+
+        .content img {
+            max-width: 100%;
+            border-radius: 1rem;
+            margin-top: 20px;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            color: #1082d8;
+        }
+
+        .team-member p {
+            color: black;
+        }
+
+		.top-margin {
+			margin-top: 50px;
+		}
+        .menu ul li a {
+            font-size: 17px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nevbar" id="nevbar">
+        <div class="logo">
+            <a href="/" id="logo">
+                <h1><span>SHARE</span> PLATE</h1>
+            </a>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a id="home" href="/">Home</a></li>
+                <li><a id="about" href="/home/about-us" target="_blank">About</a></li>
+                <li><a href="http://localhost:3000/#service">Service</a></li>
+                <li><a href="http://localhost:3000/#contact">Contact</a></li>
+                <li><a id="blog" href="/home/blog" target="_blank">Blog</a></li>
+                <li><a id="donate" href="/auth/signup" target="_blank">Donate</a></li>
+                <li><a id="donate" href="/orderForm" target="_blank">Order Free Food</a></li>
+                <li><a id="user" href="/auth/login" class="usericon" target="_blank"><i class="fas fa-user-circle">Login</i></a></li>
+            </ul>
+        </div>
+        <div class="menuicon">
+            <i id="menuicon" onclick="togglemenu()" class="fas fa-chevron-circle-down"> <span>MENU</span></i>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="header">
+            <h1>About Us</h1>
+            <p>Our Mission, Vision, and Team</p>
+        </div>
+        
+		<div class="content">
+            <h2>Our Mission</h2>
+            <p>At Share Plate, our mission is to reduce food waste and fight hunger by connecting surplus food with
+                those in need. We strive to create a sustainable and equitable food system where everyone has access to
+                nutritious food.</p>
+            <img src="/assets/images/about-mission.jpg" alt="Our Mission">
+
+            <h2 class="top-margin">Our Vision</h2>
+            <p>We envision a world where no food goes to waste and no one goes hungry. Through community engagement,
+                education, and innovative solutions, we aim to empower individuals and organizations to take action
+                against food waste and hunger.</p>
+            <img src="/assets/images/about-vision.jpg" alt="Our Vision">
+
+            <h2 class="top-margin">Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="/assets/images/about-p1.png" alt="Team Member">
+                    <h3>Abdul Mueez</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="/assets/images/about-p2.png" alt="Team Member">
+                    <h3>Danish Kumar</h3>
+                    <p>Chief Operations Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="/assets/images/about-p3.png" alt="Team Member">
+                    <h3>Tamim Shahriar</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="/assets/images/about-p4.png" alt="Team Member">
+                    <h3>Sumeet Kumar</h3>
+                    <p>Creative Director</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // drop-down menu script
+        var menu = document.getElementById("menu");
+        menu.style.maxHeight = "0px";
+
+        function togglemenu() {
+            if (menu.style.maxHeight == "0px") {
+                menu.style.maxHeight = "390px";
+            } else {
+                menu.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

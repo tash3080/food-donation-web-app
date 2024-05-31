@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/assets/css/donor/donate.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <main>
+        <%- include('../partials/donorSidebar') %>
+
+        <div id="main-wrapper">
+            <div class="page-header">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+                <h5 class="m-0">Donate</h5>
+            </div>
+
+            <form action="/donor/donate" method="POST" class="profile-form">
+
+                <h2 id="stripe">Food Donation</h2>
+
+                <div class="mb-4">
+                    <label for="food" class="form-label">Food type</label>
+                    <input type="text" name="donation[foodType]" class="form-control" id="food" placeholder="Enter food.." required autofocus>
+                </div>
+
+                <div class="row">
+                    <div class="mb-4 col-sm-6">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input type="text" name="donation[quantity]" class="form-control" id="quantity" placeholder="Enter quantity of food..." required>
+                    </div>
+
+                    <div class="mb-4 col-sm-6">
+                        <label for="time" class="form-label">Cooking Time</label>
+                        <input type="datetime-local" name="donation[cookingTime]" class="form-date-input" id="time" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-4 col-sm-8">
+                        <label for="address" class="form-label">Collection Address</label>
+                        <input type="text" name="donation[address]" class="form-control" id="address" placeholder="Enter address..." value="<%= currentUser.address %>" required>
+                    </div>
+
+                    <div class="mb-4 col-sm-4">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="number" name="donation[phone]" class="form-control" id="phone" placeholder="Enter phone..." value="<%= currentUser.phone %>" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="msg" class="form-label">Your message?</label>
+                    <textarea type="text" name="donation[donorToAdminMsg]" class="form-control" id="msg" placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn w-75 d-block m-auto mt-4">Donate Food</button>
+            </form>
+
+            <!-- Stripe Donation Form -->
+
+            <form action="/donor/donate" method="POST" id="donation-form"  class="profile-form">
+                
+                <h2 id="stripe">Amount Donation</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <br>
+                <label for="number">Phone Number:</label>
+                <input type="text" name="number" id="number" required>
+                <br>
+                <label for="amount">Amount (A$):</label>
+                <input type="number" name="amount" id="amount" required>
+                <br>
+                <label for="card-element">Card Details:</label>
+                <div id="card-element"></div>  
+                <button type="submit" class="btn w-75 d-block m-auto mt-4">Donate with Stripe</button>          
+            </form>
+        </div>
+
+    </main>
+
+    <!-- stripe api integration -->
+    <script>
+        const stripe = Stripe('pk_live_51PJ8x9KvV2QZiPVLQCoQb6GuzcKi14OcfHRcdKhMF9ShwpuPVWDtZaDR6yqXc3uNNLNeZHK2PsLHjQmYRZu8aZqU001mbCS3p5');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        const form = document.getElementById('donation-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const {token, error} = await stripe.createToken(cardElement);
+
+            if (error) {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error';
+                errorElement.textContent = error.message;
+                form.insertBefore(errorElement, form.firstChild);
+            } else {
+                // Add the token to the form
+                const hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'stripeToken');
+                hiddenInput.setAttribute('value', token.id);
+                form.appendChild(hiddenInput);
+
+                // Submit the form
+                form.submit();
+            }
+        });
+    </script>
+
+    <script>
+        const d = new Date();
+        const dateString = d.getFullYear() + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2) + "T" + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+        document.getElementById("time").value = dateString;
+    </script>
+</body>
+</html>

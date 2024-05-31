@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/assets/css/agent/previousCollections.css"> <!-- Add the path to your CSS file -->
+</head>
+<body>
+    <main>
+        <%- include('../partials/agentSidebar') %>
+        <div id="main-wrapper">
+            <div class="page-header">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+                <h5 class="m-0">Collections - Previous</h5>
+            </div>
+
+            <div class="table-container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Donor name</th>
+                            <th scope="col">Address collected</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0; i<previousCollections.length; i++) { %>
+                            <tr>
+                                <th class="text-white" scope="row"> <%= i+1 %> </th>
+                                <td class="text-white"> <%= previousCollections[i].donor.firstName + " " + previousCollections[i].donor.lastName %> </td>
+                                <td class="text-white"> <%= previousCollections[i].address %> </td>
+                                <td class="text-white"> <%= previousCollections[i].phone %> </td>
+                                <td class="action-buttons">
+                                    <a href="/agent/collection/view/<%= previousCollections[i]._id %>">View</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

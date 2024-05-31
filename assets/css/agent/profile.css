@@ -1,0 +1,89 @@
+/* Add a stylish font */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Page Header Styling with gradient background */
+.page-header {
+    background: linear-gradient(135deg, #5180e3, #5180e3);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Form Styling */
+.profile-form {
+    width: 75%;
+    border: 1px solid #1E90FF;
+    margin: 3% auto;
+    padding: 4%;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    min-width: 400px;
+    background: #E6E6FA
+}
+
+.profile-form .row {
+    margin-bottom: 20px;
+}
+
+.profile-form label {
+    font-weight: bold;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1E90FF;
+    border-radius: 5px;
+}
+
+.profile-form .form-check {
+    margin-top: 5px;
+}
+
+.profile-form .btn {
+    width: 75%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .page-header h5 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .profile-form {
+        width: 90%;
+        margin: 5% auto;
+    }
+}

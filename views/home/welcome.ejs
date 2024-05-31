@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Socket Broadcasting Listener -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const socket = io();
+
+            socket.on('connect', () => {
+                console.log('Connected to the server');
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Disconnected from the server');
+            });
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>SHARE PLATE</title>
+</head>
+<body>
+
+    <!-- hero bg video -->
+
+    <video autoplay loop muted plays-inline class="hero_video">
+        <source src="/assets/videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <!-- navbar -->
+    <div class="nevbar" id="nevbar">
+        <div class="logo">
+            <a href="/" id="logo"><h1><span>SHARE</span> PLATE</h1></a>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a id="home" href="/">Home</a></li>
+                <li><a href="/home/about-us">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a id="blog" href="/home/blog" target="_blank">Blog</a></li>
+                <li><a id="donate" href="/auth/signup" target="_blank">Donate</a></li>
+                <li><a id="donate" href="/orderForm" target="_blank">Order Free Food</a></li>
+                <li><a id="user" href="/auth/login" class="usericon" target="_blank"><i class="fas fa-user-circle">Login</i></a></li>
+            </ul>
+        </div>
+        <div class="menuicon">
+            <i id="menuicon" onclick="togglemenu()" class="fas fa-chevron-circle-down"> <span>MENU</span></i>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+
+    <div class="hero_content hero_section">
+        <br><br><br><br><br><br><br><br><br><br>
+        
+        <h1>SharePlate: Nourish & Give</h1>
+       <br><a href="/auth/login"> <button>Donate</button></a>
+       &nbsp;&nbsp;&nbsp;<a href="#contact"> <button>Contact Us</button></a>
+    </div>
+    <!-- About -->
+
+    <div class="about" id="about">
+        <div class="imgcontanner">
+            <div class="aboutimg"></div>
+        </div>
+        <div class="aboutcontent">
+            <h5>_</h5>
+            <h1>Why Donate?</h1>
+            <p>Alleviate suffering and uplift those in need, fostering a more compassionate and equitable society. Through donation, you can make 
+                a meaningful difference, creating positive impact and fostering a sense of shared responsibility for the well-being of others.</p>
+            <p>It also reduces food waste by redirecting surplus food to those in need, promoting sustainability and responsible resource management.</p>
+            <a href="/auth/signup" target="_blank">Donate</a>
+            <br>
+            <br>
+            <h5>_</h5>
+        </div>
+    </div>
+
+    <!-- Services -->'
+
+    <div class="service" id="service">
+        <h5>SERVICES</h5>
+        <h1>Our Latest Services</h1>
+        <div class="details">
+            <div class="info">
+                <div class="logo"><i class="fas fa-book-reader"></i></div>
+                <p id="head">What we do</p>
+                <p>We serve as an intermediary platform connecting donors with recipients to streaming excess food distribution and prevent wastage.</p>
+            </div>
+            <div class="info" data-aos="fade-up">
+                <div class="logo"><i class="fas fa-book-open"></i></div>
+                <p id="head">How we do it</p>
+                <p>We collect the donations through our food donation program and distribute to the people in need.</p>
+            </div>
+            <div class="info" data-aos="fade-up">
+                <div class="logo"><i class="fas fa-book"></i></div>
+                <p id="head">Make a difference</p>
+                <p>With $100, you can nourish a one's soul and fuel their dreams, ensuring they have the strength to thrive and pursue their aspirations.</p>
+            </div>
+            <div class="info" data-aos="fade-up">
+                <div class="logo"><i class="fas fa-chart-line"></i></div>
+                <p id="head">Lives benefitted so far</p>
+                <p>We distributed food and other donations to Over 50k+ people in need so far and thousands more to go</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Experience -->
+
+    <div class="contercontent">
+        <div class="counterbox one">
+            <div class="information" data-aos="fade-down">
+                <div class="number"><p style="color: rgba(255, 255, 255, 0.9);">11</p></div>
+                <div class="text"><p style="color: rgba(255, 255, 255, 0.7);">Year <br> Experienced</p></div>
+            </div>
+        </div>
+        <div class="counterbox">
+            <div class="information" data-aos="fade-down">
+                <div class="number"><p>15,087</p></div>
+                <div class="text"><p>Donors <br> enrolled</p></div>
+            </div>
+        </div>
+        <div class="counterbox">
+            <div class="information" data-aos="fade-down">
+                <div class="number"><p>315</p></div>
+                <div class="text"><p>Agents <br> working Different Centers</p></div>
+            </div>
+        </div>
+        <div class="counterbox">
+            <div class="information" data-aos="fade-down">
+                <div class="number"><p>27</p></div>
+                <div class="text"><p>Distributors <br> Across World</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div class="contact" id="contact">
+        <h1>CONTACT US</h1>
+        <br>
+        <div class="contactcontanner">
+            <div class="contanner">
+                <div class="heading">
+                    <div class="icon"><i class="far fa-map"></i></div>
+                    <div class="info">
+                        <p>Address : </p>
+                        <p id="contactinfo">Deakin University, Burwood VIC 3125, Melbourne Australia</p>
+                    </div>
+                </div>
+                <div class="heading">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info">
+                        <p>Phone : </p>
+                        <p id="contactinfo">+61 000 000 000</p>
+                    </div>
+                </div>
+                <div class="heading">
+                    <div class="icon"><i class="far fa-envelope"></i></div>
+                    <div class="info">
+                        <p>Email : </p>
+                        <p id="contactinfo">info@shareplate.com.au</p>
+                    </div>
+                </div>
+            </div>
+            <div class="messageform">
+                <div class="form">
+                    <form action="/contact" method="POST">
+                        <style>
+                            ::placeholder {color: rgba(255, 255, 255, 0.7);}
+                        </style>
+                        <input type="text" name="name" placeholder="NAME" required>
+                        <input type="email" name="email" placeholder="EMAIL" required>
+                        <input type="text" name="subject" placeholder="SUBJECT" required>
+                        <textarea type="message" name="message" id="inputbox"  cols="30" rows="5" placeholder="MESSAGE" required></textarea>
+                        <button type="submit">Inquire !</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Map Api -->
+    <div class="service" id="google_Location">
+        <h5>Come Visit Us</h5>
+        <div class="details">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.4673626791114!2d145.11232347505288!3d-37.84935353607162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405e09798c75%3A0x8b743ee115d710f6!2s221%20Burwood%20Hwy%2C%20Burwood%20VIC%203125!5e0!3m2!1sen!2sau!4v1716708580768!5m2!1sen!2sau"
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" class="mb-5"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+<!-- Footer -->
+<footer id="Footer" class="text-white text-center py-3">
+    <div class="container mt-3 mb-3">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="fw-bold">SharePlate: Nourish & Give</p>
+                <p>Join us in our mission to provide meals to those in need. Discover how you can help.</p>
+            </div>
+            <div class="col-md-5">
+                <p class="fw-bold">Contact Us</p>
+                <p>info@shareplate.com.au</p>
+                <p>(03) 9244 6100</p>
+            </div>
+            <div class="col-md-4">
+                <p class="fw-bold">Follow Us</p>
+                <p>
+                    <a href="https://www.facebook.com/DeakinUniversity/">
+                        <img src="https://img.icons8.com/?size=512&id=p62ASPK2Kpqp&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a href="https://www.instagram.com/deakinuniversity/?hl=en">
+                        <img src="https://img.icons8.com/?size=512&id=Xy10Jcu1L2Su&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a href="https://twitter.com/Deakin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                        <img src="https://img.icons8.com/?size=512&id=13963&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a class="text-white" href="https://www.linkedin.com/school/deakin-university/?originalSubdomain=au">
+                        <img src="https://img.icons8.com/?size=512&id=108786&format=png"
+                             style="width: 30px;height: 30px;filter: brightness(0) invert(1);" alt="loading..">
+                    </a>
+                    
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <strong><a href="/" style="color: black;">SharePlate: Nourish & Give.</a> All Rights Reserved. &copy 2024 </strong>
+        </div>
+    </div>
+
+</footer>
+    <script>
+        // drop-down menu script
+        var menu = document.getElementById("menu");
+        menu.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menu.style.maxHeight == "0px") {
+                menu.style.maxHeight = "390px";
+            }
+            else {
+                menu.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+<!-- <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "NQinSl6TXRxKvrW2cmNnd",
+        domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="NQinSl6TXRxKvrW2cmNnd"
+        domain="www.chatbase.co"
+        defer>
+    </script> -->
+
+    <!-- <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "NQinSl6TXRxKvrW2cmNnd",
+            domain: "www.chatbase.co"
+        };
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" defer></script> -->
+    
+    <!-- <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "KCsrwQEu-_Qi0iOINd8iN",
+        domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="KCsrwQEu-_Qi0iOINd8iN"
+        domain="www.chatbase.co"
+        defer>
+    </script> -->
+
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "KCsrwQEu-_Qi0iOINd8iN",
+        domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" defer> </script>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body id="orderbg">
+
+        <!-- navbar -->
+        <div class="nevbar ordernav" id="nevbar">
+            <div class="logo">
+                <a href="/" id="logo"><h1><span>SHARE</span> PLATE</h1></a>
+            </div>
+            <div class="menu" id="menu">
+                <ul>
+                    <li><a id="home" href="/">Home</a></li>
+                    <li><a href="/home/about-us">About</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a id="blog" href="/home/blog" target="_blank">Blog</a></li>
+                    <li><a id="donate" href="/auth/signup" target="_blank">Donate</a></li>
+                    <li><a id="donate" href="/orderForm" target="_blank">Order Free Food</a></li>
+                    <li><a id="user" href="/auth/login" class="usericon" target="_blank"><i class="fas fa-user-circle">Login</i></a></li>
+                </ul>
+            </div>
+            <div class="menuicon">
+                <i id="menuicon" onclick="togglemenu()" class="fas fa-chevron-circle-down"> <span>MENU</span></i>
+            </div>
+        </div><br><br>
+<div class="container">
+  <h1 class="my-5" id="orderhead">Order Form</h1>
+  <form action="/submit-order" method="POST">
+    <div class="mb-3">
+      <label for="meal" class="form-label">Select Meal</label>
+      <select class="form-select" id="meal" name="meal">
+        <option value="Breakfast">Breakfast Meal</option>
+        <option value="Lunch">Lunch Meal</option>
+        <option value="Dinner">Dinner Meal</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="mb-3">
+      <label for="timeSlot" class="form-label">Time Slot</label>
+      <select class="form-select" id="timeSlot" name="timeSlot">
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" id="orderbtn">Checkout</button>
+  </form>
+</div>
+<!-- Footer -->
+<footer id="Footer" class="text-white text-center py-3 orderfooter">
+    <div class="container mt-3 mb-3">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="fw-bold">SharePlate: Nourish & Give</p>
+                <p>Join us in our mission to provide meals to those in need. Discover how you can help.</p>
+            </div>
+            <div class="col-md-5">
+                <p class="fw-bold">Contact Us</p>
+                <p>info@shareplate.com.au</p>
+                <p>(03) 9244 6100</p>
+            </div>
+            <div class="col-md-4">
+                <p class="fw-bold">Follow Us</p>
+                <p>
+                    <a href="https://www.facebook.com/DeakinUniversity/">
+                        <img src="https://img.icons8.com/?size=512&id=p62ASPK2Kpqp&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a href="https://www.instagram.com/deakinuniversity/?hl=en">
+                        <img src="https://img.icons8.com/?size=512&id=Xy10Jcu1L2Su&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a href="https://twitter.com/Deakin?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                        <img src="https://img.icons8.com/?size=512&id=13963&format=png"
+                            style="width: 40px;height: 40px;" alt="loading..">
+                    </a>
+                    <a class="text-white" href="https://www.linkedin.com/school/deakin-university/?originalSubdomain=au">
+                        <img src="https://img.icons8.com/?size=512&id=108786&format=png"
+                             style="width: 30px;height: 30px;filter: brightness(0) invert(1);" alt="loading..">
+                    </a>
+                    
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <strong><a href="/" style="color: #1082d8;">SharePlate: Nourish & Give.</a> All Rights Reserved. &copy 2024 </strong>
+        </div>
+    </div>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

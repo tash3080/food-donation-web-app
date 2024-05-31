@@ -1,0 +1,33 @@
+/* Card Styling */
+.card {
+    transition: transform 0.8s;
+    border: none;
+    border-radius: 25px;
+    background-color: #1E90FF;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 3rem;
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.5rem;
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body .fs-1 {
+    font-size: 2.5rem;
+}

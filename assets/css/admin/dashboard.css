@@ -1,0 +1,29 @@
+.card {
+  transition: transform 0.3s;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body .fs-1 {
+  font-size: 2.5rem;
+}

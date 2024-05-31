@@ -1,0 +1,65 @@
+/* Add a stylish font and background settings */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Header Styling with gradient background */
+.page-header {
+    background: linear-gradient(135deg, #007BFF, #142ce1);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-header h5 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Collection Details Styling */
+.collection-details {
+    border: 1px solid #ccc;
+    margin: 3% auto;
+    padding: 4%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+    max-width: 400px;
+}
+
+.collection-details span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.collection-details .fw-bold {
+    color: #007BFF; /* Blue color for status */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .page-header h5 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .collection-details {
+        width: 90%;
+        margin: 5% auto;
+    }
+}
